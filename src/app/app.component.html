@@ -1,7 +1,9 @@
  <div *ngIf="ready">
 
 <span class="p-float-label" class="center-block">
-  <input pInputText id="command" [(ngModel)]="command"  [ngModelOptions]="{ standalone: true }" (keyup.enter)="processCommand()" style="width:100%"/>
+  <form (submit)="processCommand()">
+  <input pInputText id="command" [(ngModel)]="command"  [ngModelOptions]="{ standalone: true }"  style="width:100%"/>
+</form>
 </span>
 
 <div class="lens-center" style="position:absolute">
@@ -9,10 +11,10 @@
     <div class="circle-2"></div>
    
 </div>
-
+<img *ngIf="escaped" class="fullscreenimage" style="z-index: 200" [src]="wonimage"/>
 
 <div class="countdown" *ngIf="superusermode"  style="position:absolute;bottom:400px;display: flex;flex-direction: column">
-  <span>SUPERUSERMODUS</span>
+  <span style="font-size:150px;margin: auto;">SUPERUSERMODUS</span>
 </div>
 
 <div class="countdown" *ngIf="gameStarted"  style="position:absolute;bottom:100px" >

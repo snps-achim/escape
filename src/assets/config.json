@@ -22,7 +22,8 @@
     },
     "events":{
         "9": {"text":"Die Haupttriebwerke werden gezündet", "sound":"explosion.mp3"},
-        "7": {"text":"Sauerstoff wird abgelassen", "sound":"oxygen.mp3"}
+        "7": {"text":"Sauerstoff wird abgelassen", "sound":"oxygen.mp3"},
+        "5": {"text":"Ein Tipp, dein Geburtstag wäre ein gutes passwort.", "sound":"oxygen.mp3"}
          
     },
     "commands":[
@@ -32,11 +33,12 @@
             "gamereset":true
         },
         {
-            "name": "help",
-            "echo":"Es tut mir leid. Hier draussen kann Euch niemand helfen. Hilf dir selbst als Superuser."
+            "name": ["help","hilfe"],
+            "echo":"Es tut mir leid. Hier draussen kann Euch niemand helfen. Hilf dir selbst als Superuser.",
+            "readback":true
         },
         {
-            "name": "stop",
+            "name": ["stop","ende"],
             "echo":"Die Sequenz ist unwiderruflich eingeleitet. Du hast keine Superuserrechte.",
             "superusermode":false
         },
@@ -53,5 +55,7 @@
         }
     ],
     "minuten":10,
-    "superuserpassword":["22042014","22.04.2014","22.04.14"]
+    "superuserpassword":["22042014","22.04.2014","22.04.14"],
+    "wonimage":"won.jpg",
+    "wonsound": "won.mp3"
 }

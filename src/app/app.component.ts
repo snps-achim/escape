@@ -25,6 +25,8 @@ export class AppComponent implements OnInit{
   superusermode=false;
   team = []
   ready=false;
+  escaped=false;
+  wonimage=''
 
   async ngOnInit(){
        
@@ -39,7 +41,8 @@ export class AppComponent implements OnInit{
     this.audioBackground.load();
 
     this.audioBackground.volume = config.volume.background;
-
+    this.escaped=false;
+    this.wonimage=`assets/${config.wonimage}`
 
     const globalListenFunc = this.renderer.listen('document', 'mousedown', e => {
 
@@ -152,9 +155,20 @@ export class AppComponent implements OnInit{
             }else{
               if(knownCommand.stop){
                 clearTimeout(this.coundownTimer);
+                this.escaped=true;
+                const audioEvent = new Audio();
+                audioEvent.src = "assets/" + config.wonsound
+                audioEvent.load();
+                audioEvent.volume = config.volume.event;
+                audioEvent.play();
+                this.speechService.start(config.events[this.countdown].text)
               }
             }
 
+          }
+
+          if(knownCommand.readback){
+            this.speechService.start(command)
           }
 
           if (knownCommand.superuserpassword) {
@@ -169,6 +183,7 @@ export class AppComponent implements OnInit{
             this.seconds = 0;
             this.superuserpassword = false;
             this.superusermode =false;
+            this.escaped=false;
           }
           this.speechService.start(knownCommand.echo)
           found = true;
