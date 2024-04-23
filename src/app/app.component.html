@@ -1,15 +1,31 @@
- 
+ <div *ngIf="ready">
 
 <span class="p-float-label" class="center-block">
-  <input pInputText id="command" [(ngModel)]="command"  [ngModelOptions]="{ standalone: true }" (keyup.enter)="processCommand()"/>
+  <input pInputText id="command" [(ngModel)]="command"  [ngModelOptions]="{ standalone: true }" (keyup.enter)="processCommand()" style="width:100%"/>
 </span>
 
-<div class="lens-center">
+<div class="lens-center" style="position:absolute">
     <div class="circle-1"></div>
     <div class="circle-2"></div>
    
 </div>
 
-<div class="countdown" *ngIf="gameStarted" >
-  <div class="time">{{coundown}}:{{seconds | number:'2.0'}}</div>
+
+<div class="countdown" *ngIf="superusermode"  style="position:absolute;bottom:400px;display: flex;flex-direction: column">
+  <span>SUPERUSERMODUS</span>
+</div>
+
+<div class="countdown" *ngIf="gameStarted"  style="position:absolute;bottom:100px" >
+  <div class="time">{{countdown}}:{{seconds | number:'2.0'}}</div>
+</div>
+
+<div style="position:absolute;left:50px;top:150px;display: flex;flex-direction: column;color:cornflowerblue;font-family: 'Courier New', Courier, monospace">
+  <span style="font-size:30px">Team Vitality</span>
+  
+  <div  style="display: flex;flex-direction: column" *ngFor="let player of team">
+    <span style="font-size:20px;margin-bottom:-20px;color:#ffffff;">{{player.name}}</span>
+    <app-health  ></app-health>
+  </div>
+  
+  </div>
 </div>

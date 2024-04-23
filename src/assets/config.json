@@ -1,14 +1,27 @@
 {
 
+    "volume":{
+        "background":0.5,
+        "event":0.9
+    },
+    "team":[
+        {"name":"Gian"},
+        {"name":"Jim"},
+        {"name":"Mia"},
+        {"name":"Sam"}
 
+    ],
     "text":{
-        "einleitung":"Hallo Dschann, die Selbstzerstörung des Mutterschiffes ist nun eingeleitet.",
-        "fortgesetzt":"Hallo Dschann, die Selbstzerstörung des Mutterschiffes wird fortgesetzt.",
-        "biszur":"bis zur nuklearen Kernzündung"
+        "einleitung":"Hallo Dschann, die Startsequenz meines Raumschiffes ist nun eingeleitet.",
+        "fortgesetzt":"Hallo Dschann, das Starten alles notwendigen Systeme wird fortgesetzt.",
+        "biszur":"bis zur Flucht mit all Deinem Geburtstagsessen und Süssigkeiten",
+        "passwordok":"Das Superuserpasswort is richtig",
+        "passwordbad":"Das Superuserpasswort is falsch. Die Sequenz wird beschleunigt!"
+        
         
     },
     "events":{
-        "9": {"text":"Die Rettungskapsel hat das Mutterschiff verlassen", "sound":"explosion.mp3"},
+        "9": {"text":"Die Haupttriebwerke werden gezündet", "sound":"explosion.mp3"},
         "7": {"text":"Sauerstoff wird abgelassen", "sound":"oxygen.mp3"}
          
     },
@@ -20,12 +33,25 @@
         },
         {
             "name": "help",
-            "echo":"Es tut mir leid. Hier draussen kann Euch niemand helfen."
+            "echo":"Es tut mir leid. Hier draussen kann Euch niemand helfen. Hilf dir selbst als Superuser."
         },
         {
             "name": "stop",
-            "echo":"Die Sequenz ist unwiderruflich eingeleitet."
+            "echo":"Die Sequenz ist unwiderruflich eingeleitet. Du hast keine Superuserrechte.",
+            "superusermode":false
+        },
+        {
+            "name": "stop",
+            "echo":"Die Sequenz ist gestoppt dank Deiner  Superuserrechte.",
+            "superusermode":true,
+            "stop":true
+        },
+        {
+            "name":["su", "superuser","root","admin"],
+            "echo":"Superuser Modus angefragt. Bitte gebe jetzt dein superuser passwort ein",
+            "superuserpassword":true
         }
     ],
-    "minuten":10 
+    "minuten":10,
+    "superuserpassword":["22042014","22.04.2014","22.04.14"]
 }
