@@ -1,0 +1,31 @@
+{
+
+
+    "text":{
+        "einleitung":"Hallo Dschann, die Selbstzerstörung des Mutterschiffes ist nun eingeleitet.",
+        "fortgesetzt":"Hallo Dschann, die Selbstzerstörung des Mutterschiffes wird fortgesetzt.",
+        "biszur":"bis zur nuklearen Kernzündung"
+        
+    },
+    "events":{
+        "9": {"text":"Die Rettungskapsel hat das Mutterschiff verlassen", "sound":"explosion.mp3"},
+        "7": {"text":"Sauerstoff wird abgelassen", "sound":"oxygen.mp3"}
+         
+    },
+    "commands":[
+        { 
+            "name": "geheimreset",
+            "echo":"Das Spiel wurde erfolgreich zurückgesetzt.",
+            "gamereset":true
+        },
+        {
+            "name": "help",
+            "echo":"Es tut mir leid. Hier draussen kann Euch niemand helfen."
+        },
+        {
+            "name": "stop",
+            "echo":"Die Sequenz ist unwiderruflich eingeleitet."
+        }
+    ],
+    "minuten":10 
+}

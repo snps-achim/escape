@@ -10,6 +10,7 @@
           "style": "scss"
         }
       },
+ 
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -40,6 +41,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+          
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -124,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "escape"
+  "defaultProject": "escape",
+  "cli": {
+    "analytics": false
+  }
 }
